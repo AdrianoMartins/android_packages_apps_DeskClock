@@ -42,19 +42,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_vertical"
-            android:layout_marginStart="@dimen/notification_large_icon_width"
             android:gravity="center"
             android:minHeight="@dimen/notification_large_icon_height"
             android:orientation="vertical"
             android:paddingBottom="2dp"
-            android:paddingEnd="8dp"
             android:paddingTop="2dp" >
 
             <LinearLayout
                 android:id="@+id/line1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:orientation="horizontal" >
 
                 <Chronometer
@@ -70,7 +67,6 @@
                 android:id="@+id/swn_expanded_laps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:ellipsize="marquee"
                 android:fadingEdge="horizontal"
                 android:singleLine="true"
@@ -92,7 +88,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/notification_large_icon_width"
             android:divider="?android:attr/listDivider"
             android:dividerPadding="12dp"
             android:orientation="horizontal"
@@ -107,7 +102,6 @@
                 android:drawablePadding="8dp"
                 android:ellipsize="end"
                 android:gravity="start|center_vertical"
-                android:paddingStart="8dp"
                 android:singleLine="true"
                 android:textColor="#ccc"
                 android:textSize="14dp" />
@@ -121,7 +115,6 @@
                 android:drawablePadding="8dp"
                 android:ellipsize="end"
                 android:gravity="start|center_vertical"
-                android:paddingStart="8dp"
                 android:singleLine="true"
                 android:textColor="#ccc"
                 android:textSize="14dp" />

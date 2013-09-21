@@ -280,7 +280,6 @@ public class TimerReceiver extends BroadcastReceiver {
         .setDeleteIntent(pendingIntent)
         .setOngoing(true)
         .setPriority(priority)
-        .setShowWhen(false)
         .setSmallIcon(R.drawable.stat_notify_timer);
         if (showTicker) {
             builder.setTicker(text);

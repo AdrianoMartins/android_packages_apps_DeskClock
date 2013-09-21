@@ -987,8 +987,8 @@ public class GlowPadView extends View {
     }
 
     private void computeInsets(int dx, int dy) {
-        final int layoutDirection = getLayoutDirection();
-        final int absoluteGravity = Gravity.getAbsoluteGravity(mGravity, layoutDirection);
+        final int layoutDirection = 0;
+        final int absoluteGravity = 0;
 
         switch (absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK) {
             case Gravity.LEFT:

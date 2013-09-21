@@ -263,7 +263,8 @@ public class AddCityDialog implements OnClickListener,
                 }
             }
         });
-        builder.setOnDismissListener(new OnDismissListener() {
+        mDialog = builder.create();
+        mDialog.setOnDismissListener(new OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
                 if (mReceiverRegistered) {
@@ -276,7 +277,6 @@ public class AddCityDialog implements OnClickListener,
                 }
             }
         });
-        mDialog = builder.create();
 
         // Register broadcast listeners
         IntentFilter filter = new IntentFilter();

@@ -114,7 +114,6 @@
                 android:theme="@style/AlarmAlertFullScreenTheme"
                 android:launchMode="singleInstance"
                 android:taskAffinity=""
-                android:showOnLockScreen="true"
                 android:screenOrientation="nosensor"
                 android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation"/>
 
@@ -175,14 +174,6 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/analog_appwidget" />
         </receiver>
 
-        <receiver android:name="com.android.alarmclock.DigitalAppWidgetProvider" android:label="@string/digital_gadget"
-           android:icon="@mipmap/ic_launcher_alarmclock">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                </intent-filter>
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/digital_appwidget" />
-        </receiver>
-
         <service android:name="com.android.alarmclock.DigitalAppWidgetService"
              android:permission="android.permission.BIND_REMOTEVIEWS"
              android:exported="false" />
@@ -223,7 +214,6 @@
                 android:excludeFromRecents="true"
                 android:theme="@style/AlarmAlertFullScreenTheme"
                 android:launchMode="singleInstance"
-                android:showOnLockScreen="true"
                 android:taskAffinity=""
                 android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation"/>
 

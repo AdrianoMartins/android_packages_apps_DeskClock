@@ -107,8 +107,7 @@ public class ScreensaverActivity extends Activity {
                 registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
         int plugged = chargingIntent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
         mPluggedIn = plugged == BatteryManager.BATTERY_PLUGGED_AC
-                || plugged == BatteryManager.BATTERY_PLUGGED_USB
-                || plugged == BatteryManager.BATTERY_PLUGGED_WIRELESS;
+                || plugged == BatteryManager.BATTERY_PLUGGED_USB;
 
         mDateFormat = getString(R.string.abbrev_wday_month_day_no_year);
         mDateFormatForAccessibility = getString(R.string.full_wday_month_day_no_year);
