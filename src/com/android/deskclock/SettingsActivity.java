@@ -16,6 +16,10 @@
 
 package com.android.deskclock;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -37,6 +41,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.TimeZone;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 
 /**
  * Settings for the Alarm Clock.
@@ -71,6 +78,8 @@ public class SettingsActivity extends PreferenceActivity
             "keep_display_on_stopwatch";
     static final String KEY_VOLUME_BUTTONS =
             "volume_button_setting";
+    static final String KEY_DIGITAL_CLOCK_COLOR =
+            "digital_clock_color";
 
     public static final String DEFAULT_VOLUME_BEHAVIOR = "0";
 
@@ -193,6 +202,14 @@ public class SettingsActivity extends PreferenceActivity
             // Check if any alarms are active. If yes and
             // we allow showing the alarm icon, the icon will be shown.
             Alarms.updateStatusBarIcon(getApplicationContext(), (Boolean) newValue);
+        } else if (KEY_DIGITAL_CLOCK_COLOR.equals(pref.getKey())) {
+            AppWidgetManager widgetManager = AppWidgetManager.getInstance(this);
+            ComponentName widgetComponent = new ComponentName(this, DigitalAppWidgetProvider.class);
+            int[] widgetIds = widgetManager.getAppWidgetIds(widgetComponent);
+            Intent update = new Intent();
+            update.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds);
+            update.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+            this.sendBroadcast(update);
         }
         return true;
     }
@@ -254,6 +271,9 @@ public class SettingsActivity extends PreferenceActivity
 
         SnoozeLengthDialog snoozePref = (SnoozeLengthDialog) findPreference(KEY_ALARM_SNOOZE);
         snoozePref.setSummary();
+        
+        ColorPickerPreference clockColor = (ColorPickerPreference) findPreference(KEY_DIGITAL_CLOCK_COLOR);
+        clockColor.setOnPreferenceChangeListener(this);
     }
 
     private class TimeZoneRow implements Comparable<TimeZoneRow> {
