@@ -60,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:singleLine="true"
+                    android:paddingLeft="75dp"
                     android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Title" />
             </LinearLayout>
 
@@ -70,6 +71,7 @@
                 android:ellipsize="marquee"
                 android:fadingEdge="horizontal"
                 android:singleLine="true"
+                android:paddingLeft="75dp"
                 android:textAppearance="@style/TextAppearance.StatusBar.EventContent"
                 android:visibility="gone" />
         </LinearLayout>
@@ -104,6 +106,7 @@
                 android:gravity="start|center_vertical"
                 android:singleLine="true"
                 android:textColor="#ccc"
+                android:paddingLeft="10dp"
                 android:textSize="14dp" />
 
             <TextView
@@ -117,6 +120,7 @@
                 android:gravity="start|center_vertical"
                 android:singleLine="true"
                 android:textColor="#ccc"
+                android:paddingLeft="10dp"
                 android:textSize="14dp" />
         </LinearLayout>
     </FrameLayout>

@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:singleLine="true"
+                android:paddingLeft="75dp"
                 android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Title" />
         </LinearLayout>
 
@@ -64,6 +65,7 @@
             android:fadingEdge="horizontal"
             android:visibility="gone"
             android:singleLine="true"
+            android:paddingLeft="75dp"
             android:textAppearance="@style/TextAppearance.StatusBar.EventContent" />
     </LinearLayout>
 
