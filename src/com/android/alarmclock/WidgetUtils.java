@@ -43,16 +43,16 @@ public class WidgetUtils {
         if (options == null) {
             options = widgetManager.getAppWidgetOptions(id);
         }
-        if (options != null) {
-            int minWidth = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH);
-            if (minWidth == 0) {
-                // No data , do no scaling
-                return 1f;
-            }
-            Resources res = context.getResources();
-            float ratio = minWidth / res.getDimension(R.dimen.def_digital_widget_width);
-            return (ratio > 1) ? 1 : ratio;
-        }
+//        if (options != null) {
+//            int minWidth = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH);
+//            if (minWidth == 0) {
+//                // No data , do no scaling
+//                return 1f;
+//            }
+//            Resources res = context.getResources();
+//            float ratio = minWidth / res.getDimension(R.dimen.def_digital_widget_width);
+//            return (ratio > 1) ? 1 : ratio;
+//        }
         return 1;
     }
 
